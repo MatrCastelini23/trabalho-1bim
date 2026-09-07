@@ -5,13 +5,28 @@ define('LARAVEL_START', microtime(true));
 
 /*
 |--------------------------------------------------------------------------
+| Check If The Application Is Under Maintenance
+|--------------------------------------------------------------------------
+|
+| If the application is in maintenance mode via the "down" command
+| we will load this file so that any pre-rendered content can be
+| shown instead of starting the framework, which could cause an error.
+|
+*/
+
+if (file_exists($maintenance = __DIR__.'/storage/framework/maintenance.php')) {
+    require $maintenance;
+}
+
+/*
+|--------------------------------------------------------------------------
 | Register The Auto Loader
 |--------------------------------------------------------------------------
 |
 | Composer provides a convenient, automatically generated class loader
 | for our application. We just need to utilize it! We'll require it
 | into the script here so that we do not have to worry about the
-| loading of any of our classes manually. It's great to relax.
+| loading of any of our classes later on. It feels great to relax.
 |
 */
 
@@ -25,8 +40,8 @@ $app = require_once __DIR__.'/bootstrap/app.php';
 |--------------------------------------------------------------------------
 |
 | When we run the console application, the current CLI command will be
-| executed in this console and the response sent back to a terminal
-| or another output device for the developers. Here goes nothing!
+| executed in this console and the response sent back to a terminal or
+| another output device for the developers. Here goes nothing!
 |
 */
 
@@ -42,9 +57,9 @@ $status = $kernel->handle(
 | Shutdown The Application
 |--------------------------------------------------------------------------
 |
-| Once Artisan has finished running, we will fire off the shutdown events
-| so that any final work may be done by the application before we shut
-| down the process. This is the last thing to happen to the request.
+| Once Artisan has finished running we will fire off the shutdown core
+| callbacks so that any scheduled tasks or cleanup may be performed
+| before this script execution comes to an end and returns the status.
 |
 */
 
