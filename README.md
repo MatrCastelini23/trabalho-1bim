@@ -20,3 +20,18 @@ produtos e os itens.
 4. Entrega:
 - DATA DE ENTREGA 16/09/2026
 - Abra um PR no repositório acima com seu nome no título.
+
+
+## Controle do checklist:
+
+### Conexão com o banco de dados:
+- Conexão com banco de dados MySQL criada. Utilizando docker-compose criando um container do banco e utilizando os environments em um .env local.
+### Configuração do idioma dentro do projeto:
+- Configurado a linguagem para pt-BR de duas formas:
+    - Dentro do arquivo config/app.php alterado a linha 85 de 'locale' => 'en' para 'locale' => 'pt-BR'
+    - Através do composer segui o passo a passo abaixo:
+        - Baixei os arquivos de tradução:
+        >  composer require laravel-lang/common --dev
+        - Em seguida adicionei o idioma com o comando artisan:
+        > php artisan lang:add pt-BR
+### Criação das entidades:
