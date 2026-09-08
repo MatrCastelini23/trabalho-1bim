@@ -35,3 +35,14 @@ produtos e os itens.
         - Em seguida adicionei o idioma com o comando artisan:
         > php artisan lang:add pt-BR
 ### Criação das entidades:
+- Criação das duas entidades separadas com os comandos:
+    - > php artisan make:model Product
+    - > php artisan make:model ProductItem
+- Criação da migrations com os comandos
+    - > php artisan make:migration create_table_product
+    - > php artisan make:migration create_table_productItem
+- Assim que alterado os arquivos criados, utilizei o comando abaixo para que as migration atualizassem o banco de dados:
+> php artisan migrate
+
+#### Observações sobre essa parte:
+> Ao fazer na ordem acima tive alguns imprevistos. Fora a conexão com o banco de dados que tive ajustar (porém era algo entre projeto -> MysqlServer), tive que reoganizar as migrations e a models que retornavam erros SQL (Tabela já existe, erro em relacionamento de chave estrangeira), logo uma proxima, devo escutar as migrations primeiro e as models após e sempre criar a migration da tabela "pai primeiro".

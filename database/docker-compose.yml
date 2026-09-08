@@ -7,6 +7,7 @@ services:
         environment:
             - MYSQL_DATABASE=mysqlDB
             - MYSQL_ROOT_PASSWORD=mysqlPW
+            - MYSQL_ROOT_HOST=% #jamais fazer isso em produção
         ports:
             - '3306:3306'
         volumes:
