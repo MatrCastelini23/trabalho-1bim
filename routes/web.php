@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductItemController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('products', ProductController::class);
+Route::resource('items', ProductItemController::class);
 
 Route::get('/', function () {
     return view('welcome');

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ProductItem extends Model
 {
     use HasFactory;
-
+    protected $table = 'product_item';
     protected $fillable = ['qtd', 'cor', 'valor', 'product_id'];
 
     public function product(): BelongsTo {

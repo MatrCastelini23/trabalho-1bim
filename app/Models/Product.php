@@ -9,6 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $table = 'product';
     protected $fillable = ['nome', 'preco', 'und_medida'];
 
     public function productItem(): HasMany{

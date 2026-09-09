@@ -42,7 +42,24 @@ produtos e os itens.
     - > php artisan make:migration create_table_product
     - > php artisan make:migration create_table_productItem
 - Assim que alterado os arquivos criados, utilizei o comando abaixo para que as migration atualizassem o banco de dados:
-> php artisan migrate
+    - > php artisan migrate
 
 #### Observações sobre essa parte:
 > Ao fazer na ordem acima tive alguns imprevistos. Fora a conexão com o banco de dados que tive ajustar (porém era algo entre projeto -> MysqlServer), tive que reoganizar as migrations e a models que retornavam erros SQL (Tabela já existe, erro em relacionamento de chave estrangeira), logo uma proxima, devo escutar as migrations primeiro e as models após e sempre criar a migration da tabela "pai primeiro".
+
+### Criação dos Controllers e Rotas:
+
+- Através do comando abaixo, criei uma controller para cada model e editei apenas a função index para listar produtos e items em suas controllers.
+    - > php artisan make:controller NomeDaController --model-NomeDaModel
+- Para as rotas adicionei as duas linhas abaixo dentro do arquivo routes/web.php para que o Laravel idenfique as rotas sozinho.
+    - > Route::resource('products', ProductController::class); /n
+    - > Route::resource('items', ProductItemController::class);
+
+### Criação de Views:
+
+Não havia descritivo para criação de views porém realizei a criação do modo que descrevo abaixo:
+
+- Criei dois arquivos:
+    - > resources/views/items/index.blade.php
+    - > resources/views/products/index.blade.php
+- Cada uma dessa views é chamada de acordo com a rota passada na URL do navegador.
