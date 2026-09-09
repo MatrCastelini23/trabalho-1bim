@@ -1,5 +1,7 @@
 # Trabalho Primeiro bimestre de Laravel: 
 
+Aluno: Matheus Janoca Castelini
+R.A: 250289
 
 ## Checklist antes do Pull Request:
 
