@@ -63,3 +63,18 @@ Não havia descritivo para criação de views porém realizei a criação do mod
     - > resources/views/items/index.blade.php
     - > resources/views/products/index.blade.php
 - Cada uma dessa views é chamada de acordo com a rota passada na URL do navegador.
+
+### Criação das Seeds:
+
+Para povoar o banco de dados e refletir na views, criei as seeds utilzando os arquivos e comando de CLI abaixo:
+
+- Para criar as factories utilizei o comando abaixo. Nos arquivos factory utilizei a biblioteca faker para gerar nomes e valores aleatorios.
+> php artisan make:factory NomeDaFactory
+
+- Após a criação das factories editei o arquivo principal de Seeds (database/seeders/DatabaseSeeder.php) para usar as factories da maneira encadeiada. Cada produto criado gerar 3 Items para sim.
+
+- Para executar as Seeds utilizei o comando abaixo após todas as edições:
+> php artisan db:seed
+
+### Observações sobre as Seeds:
+As Seeds foram criadas com intuito de povoar o banco de dados e ver como seria o tratamento do frontend, porém também serviu para ajustar alguns erros de código na criação das models, como nome das colunas errado, assim para criação de outras funções do CRUD, temos um checkpoint de funcionalidades, sabendo que as models estão corretas.

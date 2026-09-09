@@ -55,7 +55,7 @@
                 <tr>
                     <td>{{ $item->id }}</td>
                     <!-- Exibe o nome do produto pai através do relacionamento -->
-                    <td><strong>{{ $item->product->nome ?? 'Produto não encontrado' }}</strong></td>
+                    <td><strong>{{ $item->product->name ?? 'Produto não encontrado' }}</strong></td>
                     <td>
                         <span class="badge-color">
                             <!-- Tenta renderizar um quadradinho com a cor de fundo dinamicamente -->

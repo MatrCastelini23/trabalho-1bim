@@ -52,8 +52,8 @@
             @forelse($products as $product)
                 <tr>
                     <td>{{ $product->id }}</td>
-                    <td><strong>{{ $product->nome }}</strong></td>
-                    <td>R$ {{ number_format($product->preco, 2, ',', '.') }}</td>
+                    <td><strong>{{ $product->name }}</strong></td>
+                    <td>R$ {{ number_format($product->price, 2, ',', '.') }}</td>
                     <td>{{ $product->und_medida }}</td>
                     <!-- Conta quantos itens estão relacionados a este produto -->
                     <td>{{ $product->productItem->count() }} variação(ões)</td>

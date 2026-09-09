@@ -3,13 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
 
 class ProductItem extends Model
 {
     use HasFactory;
     protected $table = 'product_item';
-    protected $fillable = ['qtd', 'cor', 'valor', 'product_id'];
+    protected $fillable = ['quantidade', 'cor', 'valor', 'product_id'];
 
     public function product(): BelongsTo {
         return $this->belongsTo(Product::class);
