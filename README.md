@@ -52,7 +52,7 @@ produtos e os itens.
 - Através do comando abaixo, criei uma controller para cada model e editei apenas a função index para listar produtos e items em suas controllers.
     - > php artisan make:controller NomeDaController --model-NomeDaModel
 - Para as rotas adicionei as duas linhas abaixo dentro do arquivo routes/web.php para que o Laravel idenfique as rotas sozinho.
-    - > Route::resource('products', ProductController::class); /n
+    - > Route::resource('products', ProductController::class);
     - > Route::resource('items', ProductItemController::class);
 
 ### Criação de Views:
